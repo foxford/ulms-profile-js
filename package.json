@@ -1,0 +1,38 @@
+{
+  "name": "@ulms/profile",
+  "version": "0.1.1",
+  "description": "JavaScript API-client for Profile service",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "lint": "eslint .",
+    "prebuild": "rm -rf lib",
+    "prepublishOnly": "npm run test && npm run build",
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netology-group/ulms-profile-js.git"
+  },
+  "author": "netology-group",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/netology-group/ulms-profile-js/issues"
+  },
+  "homepage": "https://github.com/netology-group/ulms-profile-js#readme",
+  "devDependencies": {
+    "@babel/cli": "~7.2.3",
+    "@babel/core": "~7.2.2",
+    "@babel/preset-env": "~7.3.1",
+    "eslint": "~5.12.1",
+    "eslint-config-standard": "~12.0.0",
+    "eslint-plugin-import": "~2.15.0",
+    "eslint-plugin-node": "~8.0.1",
+    "eslint-plugin-promise": "~4.0.1",
+    "eslint-plugin-standard": "~4.0.0"
+  },
+  "dependencies": {}
+}
