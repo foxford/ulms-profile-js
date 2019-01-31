@@ -14,7 +14,7 @@ import {
   FetchHttpClient,
   SimpleTokenProvider,
   HttpProfileResource
-} from 'ulms-profile-js'
+} from '@ulms/profile'
 
 const TOKEN = 'jwt-token'
 const id = '123'
