@@ -1,17 +1,17 @@
 /* global fetch */
 
 export class FetchHttpClient {
-  get (url, headers) {
+  get (url, config) {
     return fetch(url, {
       method: 'GET',
-      headers: headers
+      headers: config.headers
     })
       .then((response) => response.json())
   }
-  patch (url, headers, data) {
+  patch (url, data, config) {
     return fetch(url, {
       method: 'PATCH',
-      headers: headers,
+      headers: config.headers,
       body: JSON.stringify(data)
     })
       .then((response) => response.json())
