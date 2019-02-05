@@ -18,6 +18,7 @@ import {
 
 const TOKEN = 'jwt-token'
 const id = '123'
+const ids = ['123', '456', '789']
 const scope = '456'
 
 const profile = new HttpProfileResource(
@@ -29,6 +30,15 @@ const profile = new HttpProfileResource(
 
 // retrieving profile data
 profile.getProfile(id, scope)
+  .then((response) => {
+    console.log('[response]', response)
+  })
+  .catch((error) => {
+    console.log('[error]', error)
+  })
+
+// retrieving list of profiles
+profile.listProfiles(ids, scope)
   .then((response) => {
     console.log('[response]', response)
   })
