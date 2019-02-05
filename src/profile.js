@@ -9,6 +9,12 @@ export class HttpProfileResource {
     this.httpClient = httpClient
     this.tokenProvider = tokenProvider
   }
+  static _headers (params) {
+    return {
+      authorization: `Bearer ${params.token}`,
+      'content-type': 'application/json'
+    }
+  }
   getProfile (id, scope) {
     let qs = ''
 
@@ -21,10 +27,20 @@ export class HttpProfileResource {
         this.httpClient.get(
           `${this.baseUrl}/users/${id}${qs}`,
           {
-            headers: {
-              authorization: `Bearer ${token}`,
-              'content-type': 'application/json'
-            }
+            headers: HttpProfileResource._headers({ token })
+          }
+        )
+      )
+  }
+  listProfiles (ids, scope) {
+    let qs = `?ids=${ids.join(',')}&scope=${scope}`
+
+    return this.tokenProvider.getToken()
+      .then((token) =>
+        this.httpClient.get(
+          `${this.baseUrl}/users${qs}`,
+          {
+            headers: HttpProfileResource._headers({ token })
           }
         )
       )
@@ -38,10 +54,7 @@ export class HttpProfileResource {
           `${this.baseUrl}/users/${id}${qs}`,
           data,
           {
-            headers: {
-              authorization: `Bearer ${token}`,
-              'content-type': 'application/json'
-            }
+            headers: HttpProfileResource._headers({ token })
           }
         )
       )
