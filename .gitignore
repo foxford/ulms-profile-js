@@ -25,4 +25,5 @@ yarn.lock
 .Spotlight-V100
 .Trashes
 
+es/
 lib/
