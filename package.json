@@ -1,15 +1,19 @@
 {
   "name": "@ulms/profile",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "JavaScript API-client for Profile service",
   "files": [
+    "es",
     "lib"
   ],
   "main": "lib/index.js",
+  "module": "es/index.js",
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "npm run build:es && npm run build:lib",
+    "build:es": "BABEL_ENV=es babel src -d es",
+    "build:lib": "BABEL_ENV=lib babel src -d lib",
     "lint": "eslint .",
-    "prebuild": "rm -rf lib",
+    "prebuild": "rm -rf es lib",
     "prepublishOnly": "npm run test && npm run build",
     "test": "eslint ."
   },
