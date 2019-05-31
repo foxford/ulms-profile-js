@@ -1,6 +1,6 @@
 {
   "name": "@ulms/profile",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "JavaScript API-client for Profile service",
   "files": [
     "es",
@@ -21,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/netology-group/ulms-profile-js.git"
   },
-  "author": "netology-group",
+  "author": "OLC Netology group LLC",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/netology-group/ulms-profile-js/issues"

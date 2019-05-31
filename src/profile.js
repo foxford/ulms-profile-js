@@ -5,7 +5,7 @@ export class HttpProfileResource {
     httpClient,
     tokenProvider
   ) {
-    this.baseUrl = `${host}/${endpoint}`
+    this.baseUrl = host + endpoint
     this.httpClient = httpClient
     this.tokenProvider = tokenProvider
   }
