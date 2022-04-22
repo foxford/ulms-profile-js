@@ -1,6 +1,6 @@
 {
   "name": "@ulms/profile",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "JavaScript API-client for Profile service",
   "files": [
     "es",

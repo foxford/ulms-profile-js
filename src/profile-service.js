@@ -62,6 +62,10 @@ class ProfileService {
     reject(error)
   }
 
+  forceReadProfile (id, scope) {
+    return this._client.getProfile(id, scope, true)
+  }
+
   readMeProfile (scope) {
     return this._client.getProfile('me', scope)
   }

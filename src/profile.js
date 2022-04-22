@@ -15,11 +15,16 @@ export class HttpProfileResource {
       'content-type': 'application/json'
     }
   }
-  getProfile (id, scope) {
+  getProfile (id, scope, force = false) {
     let qs = ''
 
     if (scope) {
       qs = `?scope=${scope}`
+    }
+
+    // to avoid Nginx cache
+    if (force) {
+      qs += `${qs.length ? '&' : '?'}timestamp=${new Date().getTime()}`
     }
 
     return this.tokenProvider.getToken()
